@@ -4,7 +4,7 @@ LABEL maintainer="jeff@ressourcenkonflikt.de"
 LABEL vendor="https://github.com/jeboehm/docker-mailserver"
 LABEL de.ressourcenkonflikt.docker-mailserver.autoheal="true"
 
-ARG EXTENSION_INSTALLER_VER=2.7.36 # renovate: depName=mlocati/docker-php-extension-installer
+ARG EXTENSION_INSTALLER_VER=2.8.0 # renovate: depName=mlocati/docker-php-extension-installer
 RUN curl -sSLf \
         -o /usr/local/bin/install-php-extensions \
         https://github.com/mlocati/docker-php-extension-installer/releases/download/${EXTENSION_INSTALLER_VER}/install-php-extensions && \
@@ -66,7 +66,7 @@ RUN --mount=type=cache,target=/root/.composer \
         ${RC_PLUGINS}; \
     fi
 
-ARG ADMIN_VER=5.4.15 # renovate: depName=jeboehm/mailserver-admin
+ARG ADMIN_VER=5.4.18 # renovate: depName=jeboehm/mailserver-admin
 RUN --mount=type=cache,target=/root/.composer \
     mkdir /opt/manager && \
     cd /opt/manager && \
